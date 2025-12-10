@@ -54,23 +54,19 @@ Smooth UX with visual feedback.
 ## 📂 Project Structure
 
 meme-react/
-├── backend/
-│   ├── server.js
-│   ├── package.json
-│   ├── package-lock.json
-│   └── .env
-│
-└── vite-project/
-    ├── src/
-    │   └── App.jsx
-    ├── public/
-    ├── package.json
-    ├── package-lock.json
-    └── vite.config.js
-
-
-yaml
-Copy code
+  ├── backend/
+  │   ├── server.js
+  │   ├── package.json
+  │   ├── package-lock.json
+  │   └── .env
+  │
+  └── vite-project/
+      ├── src/
+      │   └── App.jsx
+      ├── public/
+      ├── package.json
+      ├── package-lock.json
+      └── vite.config.js
 
 ---
 
@@ -81,9 +77,6 @@ Copy code
 git clone <your-repo-link>
 cd meme-react
 
-yaml
-Copy code
-
 ---
 
 ## 2️⃣ Backend Setup
@@ -91,29 +84,18 @@ Copy code
 cd backend
 npm install
 
-shell
-Copy code
-
 ### Create `.env`  
 
 HF_API_KEY=your_huggingface_api_key
-
-shell
-Copy code
 
 ### Start backend
 
 node server.js
 
-yaml
-Copy code
-
 Backend runs at:
 
 http://localhost:5000
 
-yaml
-Copy code
 
 ---
 
@@ -123,15 +105,9 @@ cd ../vite-project
 npm install
 npm run dev
 
-yaml
-Copy code
-
 Frontend runs at:
 
 http://localhost:5173
-
-yaml
-Copy code
 
 ---
 
@@ -147,8 +123,6 @@ Request body:
 }
 Response:
 
-json
-Copy code
 {
   "imageUrl": "data:image/png;base64,..."
 }
