@@ -30,39 +30,38 @@ function App() {
   };
 
   const handleKeyPress = (e) => {
-    if (e.key === "Enter") {
-      generateMeme();
-    }
+    if (e.key === "Enter") generateMeme();
   };
 
   return (
     <div
       style={{
-        minHeight: "100vh",
+        height: "100vh",
+        width: "100vw",
         background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
         display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
         justifyContent: "center",
+        alignItems: "center",
         padding: "20px",
-        fontFamily: "Arial, sans-serif",
+        boxSizing: "border-box",
+        overflow: "auto",
       }}
     >
       <div
         style={{
-          background: "rgba(255, 255, 255, 0.95)",
+          background: "rgba(255, 255, 255, 0.97)",
           borderRadius: "20px",
           padding: "40px",
-          maxWidth: "800px",
           width: "100%",
+          maxWidth: "600px",
           boxShadow: "0 20px 60px rgba(0,0,0,0.3)",
         }}
       >
         <h1
           style={{
             textAlign: "center",
-            fontSize: "3rem",
-            margin: "0 0 30px 0",
+            fontSize: "2.4rem",
+            marginBottom: "25px",
             background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
@@ -109,17 +108,17 @@ function App() {
             border: "none",
             borderRadius: "10px",
             transition: "transform 0.2s, box-shadow 0.2s",
-            boxShadow: "0 4px 15px rgba(0,0,0,0.2)",
+            boxShadow: "0 4px 15px rgba(0, 0, 0, 0.2)",
           }}
           onMouseEnter={(e) => {
             if (!loading && prompt.trim()) {
               e.target.style.transform = "translateY(-2px)";
-              e.target.style.boxShadow = "0 6px 20px rgba(0,0,0,0.3)";
+              e.target.style.boxShadow = "0 6px 20px rgba(0, 0, 0, 0.3)";
             }
           }}
           onMouseLeave={(e) => {
             e.target.style.transform = "translateY(0)";
-            e.target.style.boxShadow = "0 4px 15px rgba(0,0,0,0.2)";
+            e.target.style.boxShadow = "0 4px 15px rgba(0, 0, 0, 0.2)";
           }}
         >
           {loading ? "🎨 Generating..." : "✨ Generate Meme"}
@@ -134,7 +133,7 @@ function App() {
               fontSize: "16px",
             }}
           >
-            Creating your masterpiece... This may take 10-30 seconds ⏳
+            Creating your masterpiece... This may take 10–30 seconds ⏳
           </p>
         )}
 
@@ -152,16 +151,27 @@ function App() {
         )}
 
         {image && (
-          <div style={{ marginTop: "30px", textAlign: "center" }}>
+          <div
+            style={{
+              marginTop: "30px",
+              maxHeight: "70vh",
+              overflowY: "auto",
+              overflowX: "hidden",
+              paddingRight: "8px",
+              textAlign: "center",
+            }}
+          >
             <img
               src={image}
               alt="Generated Meme"
               style={{
-                maxWidth: "100%",
+                width: "100%",
+                height: "auto",
                 borderRadius: "15px",
                 boxShadow: "0 10px 30px rgba(0,0,0,0.2)",
               }}
             />
+
             <a
               href={image}
               download="meme.png"
@@ -174,10 +184,7 @@ function App() {
                 textDecoration: "none",
                 borderRadius: "8px",
                 fontWeight: "bold",
-                transition: "background 0.3s",
               }}
-              onMouseEnter={(e) => (e.target.style.background = "#45a049")}
-              onMouseLeave={(e) => (e.target.style.background = "#4CAF50")}
             >
               💾 Download Image
             </a>
