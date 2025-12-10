@@ -52,6 +52,7 @@ Smooth UX with visual feedback.
 ---
 
 ## 📂 Project Structure
+```
 
 meme-react/
 |-- backend/
@@ -67,6 +68,7 @@ meme-react/
     |-- package.json
     |-- package-lock.json
     `-- vite.config.js
+```
 
 
 ---
